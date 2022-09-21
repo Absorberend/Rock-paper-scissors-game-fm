@@ -1,0 +1,123 @@
+
+.button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.rules__button {
+    border: solid hsl(217, 16%, 45%) 2px;
+    border-radius: 10px;
+    background-color: inherit;
+    width: 150px;
+    height: 50px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.rules__modal {
+    position: absolute;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    top: 0px;
+    left: 0px;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
+
+.rules__modal__header {
+    letter-spacing: 1px;
+    height: 175px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 32px;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    padding: 0;
+    margin: 0;
+}
+
+.rules__modal__image {
+    height: 415px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4em 2em;
+    
+}
+
+.rules__modal__close__button__wrapper {
+    height: 160px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3.5em 2em;
+}
+ 
+
+@media only screen and (min-width: 600px) {
+
+    .rules__modal__bg {
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+    }
+
+    .rules__modal {
+        width: 450px;
+        height: 450px;
+        display: grid;
+        grid-template-areas:
+        "rmh rmcb"
+        "rmi rmi";
+        grid-template-columns: 0.5fr 4fr;
+        grid-template-rows: 0.5fr 1fr;
+        border-radius: 10px;
+        padding: 2em;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      
+    }
+
+    .rules__modal__header {
+        grid-area: rmh;
+        padding: 0;
+        height: auto;
+    }
+
+    .rules__modal__image { 
+        grid-area: rmi;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .rules__modal__close__button__wrapper {
+        grid-area: rmcb;
+        padding: 0;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+}
