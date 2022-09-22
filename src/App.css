@@ -77,3 +77,9 @@ body {
     align-items: center;
   }
 }
+
+@media only screen and (min-width: 1000px) {
+  .app__footer {
+    min-height: 100px;
+  }
+}
