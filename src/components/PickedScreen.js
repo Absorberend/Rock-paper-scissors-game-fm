@@ -11,7 +11,7 @@ import tada from "../assets/tada.mp3";
 import gameOver from "../assets/game-over.mp3";
 import crickets from "../assets/crickets.mp3";
 
-export default function PickedScreen({pickedValue, picked, housePick, condition, onConditionClick, onPlayAgainButtonClick}) {
+export default function PickedScreen({pickedValue, picked, housePick, condition, onConditionClick, onPlayAgainButtonClick, volume}) {
     const [timer, setTimer] = useState(0);
     const { width, height } = useWindowSize();
 
@@ -81,7 +81,7 @@ export default function PickedScreen({pickedValue, picked, housePick, condition,
                     <div className={`picked__screen__house__bg`}></div>
                 </div>
                 <span className="picked__screen__house__subtext">The house picked</span>
-                <audio src={drumRoll} autoPlay />
+                {volume && <audio src={drumRoll} autoPlay />}
             </div>
             );
             
@@ -118,11 +118,11 @@ export default function PickedScreen({pickedValue, picked, housePick, condition,
             <span className="picked__screen__house__subtext">The house picked</span>
             <div className="picked__screen__header">
                 {condition === "draw" && <h2>Draw</h2>}
-                {condition === "draw" && <audio src={crickets} autoPlay />}
+                {condition === "draw" && volume && <audio src={crickets} autoPlay />}
                 {condition === "lose" && <h2>You Lose</h2>}
-                {condition === "lose" && <audio src={gameOver} autoPlay />}
+                {condition === "lose" && volume && <audio src={gameOver} autoPlay />}
                 {condition === "win" && <h2>You Win</h2>}
-                {condition === "win" && <audio src={tada} autoPlay />}
+                {condition === "win" && volume && <audio src={tada} autoPlay />}
                 {condition === "win" && <Confetti width={width} height={height} />}
             </div>
             <div className="picked__screen__button">

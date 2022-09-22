@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './App.css';
 import PickedScreen from "./components/PickedScreen";
 import MakeYourPick from "./components/MakeYourPick.js";
 import Rules from "./components/Rules.js";
+import Volume from "./components/Volume.js";
 import ScoreMenu from "./components/ScoreMenu.js";
 
 function App() {
@@ -11,6 +12,17 @@ function App() {
   const [pickedValue, setPickedValue] = useState("");
   const [housePick, setHousePick] = useState(null);
   const [condition, setCondition] = useState("");
+  const [volume, setVolume] = useState(localStorage.getItem("volume") === "true");
+
+
+  useEffect(() => {
+    localStorage.setItem("volume", volume);
+    console.log(volume);
+  }, [volume])
+
+  const handleVolumeClick = () => {
+    setVolume(prevVolume => !prevVolume);
+  }
 
   const handleViewRulesClick = () => {
     setViewRules(prevViewRules => !prevViewRules);
@@ -80,10 +92,19 @@ function App() {
       </header>
       <main className="app__main">
         {!picked && <MakeYourPick onPickClick={handlePickClick} />}
-        {picked && <PickedScreen pickedValue={pickedValue} housePick={housePick} onConditionClick={handleConditionClick} condition={condition} picked={picked} onPlayAgainButtonClick={handlePlayAgainButtonClick} />}
+        {picked && <PickedScreen 
+          pickedValue={pickedValue} 
+          housePick={housePick} 
+          onConditionClick={handleConditionClick} 
+          condition={condition} 
+          picked={picked} 
+          onPlayAgainButtonClick={handlePlayAgainButtonClick}
+          volume={volume} 
+        />}
       </main>  
       <footer className="app__footer">
         <Rules viewRules={viewRules} onViewRulesClick={handleViewRulesClick} />
+        <Volume volume={volume} onVolumeClick={handleVolumeClick} /> 
       </footer>
     </>
   );

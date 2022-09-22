@@ -1,0 +1,16 @@
+
+.volume__container {
+    border: solid hsl(217, 16%, 45%) 2px;
+    border-radius: 10px;
+    background-color: inherit;
+    width: 50px;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume__container img {
+    filter: invert(100%);
+}
