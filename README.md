@@ -13,5 +13,5 @@ https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH
 
 ![My solution](/public/rpsgame.jpg "My solution")
 
-View my solution at: https://superlative-bonbon-872ae6.netlify.app/ 
+View my solution at: https://ifyoureadthisurecool.netlify.app/
 
