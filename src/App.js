@@ -91,16 +91,20 @@ function App() {
         <ScoreMenu condition={condition} />
       </header>
       <main className="app__main">
-        {!picked && <MakeYourPick onPickClick={handlePickClick} />}
-        {picked && <PickedScreen 
-          pickedValue={pickedValue} 
-          housePick={housePick} 
-          onConditionClick={handleConditionClick} 
-          condition={condition} 
-          picked={picked} 
-          onPlayAgainButtonClick={handlePlayAgainButtonClick}
-          volume={volume} 
-        />}
+        {!picked && (
+          <MakeYourPick onPickClick={handlePickClick} />
+        )}
+        {picked && (
+          <PickedScreen 
+            pickedValue={pickedValue} 
+            housePick={housePick} 
+            onConditionClick={handleConditionClick} 
+            condition={condition} 
+            picked={picked} 
+            onPlayAgainButtonClick={handlePlayAgainButtonClick}
+            volume={volume} 
+          />
+        )}
       </main>  
       <footer className="app__footer">
         <Rules viewRules={viewRules} onViewRulesClick={handleViewRulesClick} />

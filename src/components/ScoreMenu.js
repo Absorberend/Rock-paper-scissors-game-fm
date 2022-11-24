@@ -28,7 +28,9 @@ export default function ScoreMenu({condition}) {
         <div className="scoreMenu__container">
             <img src={Logo} className="app__logo" alt="app logo"/>
             <div className="scoreMenu__scores__wrapper">
-                <span className="scoreMenu__scores__header">{`Score`.toLocaleUpperCase()}</span>
+                <span className="scoreMenu__scores__header">
+                    {`Score`.toLocaleUpperCase()}
+                </span>
                 <span className="scoreMenu__scores">{count}</span>
             </div>
         </div>

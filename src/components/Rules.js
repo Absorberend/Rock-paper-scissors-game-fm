@@ -24,20 +24,26 @@ export default function Rules({viewRules, onViewRulesClick}) {
 
     return (
         <>
-            {!viewRules && <button className="button rules__button" onClick={onViewRulesClick}>{`Rules`.toUpperCase()}</button>}
-            {viewRules && <div className="rules__modal__bg" onClick={handleRulesOutsideClick}>
-                <div className="rules__modal">
-                    <h2 className="rules__modal__header">{`Rules`.toLocaleUpperCase()}</h2>
-                    <div className="rules__modal__image">
-                        <img src={rulesImage} alt="shows the rules"/>
-                    </div>
-                    <div className="rules__modal__close__button__wrapper">
-                        <button className="button rules__modal_close__button" onClick={onViewRulesClick}>
-                            <img src={closeIcon} alt="close modal icon"/>
-                        </button>
+            {!viewRules && (
+                <button className="button rules__button" onClick={onViewRulesClick}>
+                    {`Rules`.toUpperCase()}
+                </button>
+            )}
+            {viewRules && (
+                <div className="rules__modal__bg" onClick={handleRulesOutsideClick}>
+                    <div className="rules__modal">
+                        <h2 className="rules__modal__header">{`Rules`.toLocaleUpperCase()}</h2>
+                        <div className="rules__modal__image">
+                            <img src={rulesImage} alt="shows the rules"/>
+                        </div>
+                        <div className="rules__modal__close__button__wrapper">
+                            <button className="button rules__modal_close__button" onClick={onViewRulesClick}>
+                                <img src={closeIcon} alt="close modal icon"/>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>}
+            )}
         </>
     );
 

@@ -67,12 +67,15 @@ export default function PickedScreen({pickedValue, picked, housePick, condition,
         }
     }
 
-
     if (timer === 1) {
         return (
             <div className="picked__screen__container">
                 <div className={`picked__option__default picked__${pickedValue}__wrapper picked__screen__player__grid`}>
-                    <img src={handleIconLoad()} className="picked__default__img__size" alt={pickedValue}/>
+                    <img 
+                        src={handleIconLoad()} 
+                        className="picked__default__img__size" 
+                        alt={pickedValue}
+                    />
                     <div className={`picked__${pickedValue}__bg`}></div>
                 </div>
                 <span className="picked__screen__player__subtext">You picked</span>
@@ -81,7 +84,9 @@ export default function PickedScreen({pickedValue, picked, housePick, condition,
                     <div className={`picked__screen__house__bg`}></div>
                 </div>
                 <span className="picked__screen__house__subtext">The house picked</span>
-                {volume && <audio src={drumRoll} autoPlay />}
+                {volume && (
+                    <audio src={drumRoll} autoPlay />
+                )}
             </div>
             );
             
@@ -89,12 +94,20 @@ export default function PickedScreen({pickedValue, picked, housePick, condition,
         return (
             <div className="picked__screen__container">
                 <div className={`picked__option__default picked__${pickedValue}__wrapper picked__screen__player__grid`}>
-                    <img src={handleIconLoad()} className="picked__default__img__size" alt={pickedValue}/>
+                    <img 
+                        src={handleIconLoad()} 
+                        className="picked__default__img__size" 
+                        alt={pickedValue}
+                    />
                     <div className={`picked__${pickedValue}__bg`}></div>
                 </div>
                 <span className="picked__screen__player__subtext">You picked</span>
                 <div className={`picked__option__default picked__${handleHousePickOnLoad()}__wrapper picked__screen__house__grid`}>
-                    <img src={handleHouseIconOnLoad()} className="picked__default__img__size" alt="What the house picked"/>
+                    <img 
+                        src={handleHouseIconOnLoad()} 
+                        className="picked__default__img__size" 
+                        alt="What the house picked"
+                    />
                     <div className={`picked__screen__house__bg`}></div>
                     <div className={`picked__${handleHousePickOnLoad()}__bg`}></div>
                 </div>
@@ -106,24 +119,46 @@ export default function PickedScreen({pickedValue, picked, housePick, condition,
     return (
         <div className="picked__screen__container">
             <div className={`picked__option__default picked__${pickedValue}__wrapper picked__screen__player__grid`}>
-                <img src={handleIconLoad()} className="picked__default__img__size" alt={pickedValue}/>
+                <img 
+                    src={handleIconLoad()} 
+                    className="picked__default__img__size" 
+                    alt={pickedValue}
+                />
                 <div className={`picked__${pickedValue}__bg`}></div>
             </div>
             <span className="picked__screen__player__subtext">You picked</span>
             <div className={`picked__option__default picked__${handleHousePickOnLoad()}__wrapper picked__screen__house__grid`}>
-                <img src={handleHouseIconOnLoad()} className="picked__default__img__size" alt={pickedValue}/>
+                <img 
+                    src={handleHouseIconOnLoad()} 
+                    className="picked__default__img__size" 
+                    alt={pickedValue}
+                />
                 <div className={`picked__screen__house__bg`}></div>
                 <div className={`picked__${handleHousePickOnLoad()}__bg`}></div>
             </div>
             <span className="picked__screen__house__subtext">The house picked</span>
             <div className="picked__screen__header">
-                {condition === "draw" && <h2>Draw</h2>}
-                {condition === "draw" && volume && <audio src={crickets} autoPlay />}
-                {condition === "lose" && <h2>You Lose</h2>}
-                {condition === "lose" && volume && <audio src={gameOver} autoPlay />}
-                {condition === "win" && <h2>You Win</h2>}
-                {condition === "win" && volume && <audio src={tada} autoPlay />}
-                {condition === "win" && <Confetti width={width} height={height} />}
+                {condition === "draw" && (
+                    <h2>Draw</h2>
+                )}
+                {condition === "draw" && volume && (
+                    <audio src={crickets} autoPlay />
+                )}
+                {condition === "lose" && (
+                    <h2>You Lose</h2>
+                )}
+                {condition === "lose" && volume && (
+                    <audio src={gameOver} autoPlay />
+                )}
+                {condition === "win" && (
+                    <h2>You Win</h2>
+                )}
+                {condition === "win" && volume && (
+                    <audio src={tada} autoPlay />
+                )}
+                {condition === "win" && (
+                    <Confetti width={width} height={height} />
+                )}
             </div>
             <div className="picked__screen__button">
                 <button onClick={onPlayAgainButtonClick}>Play Again</button>
